@@ -1,0 +1,161 @@
+* {
+	font-family: 'Roboto Slab', serif;
+
+}
+
+body {
+	padding-top: 80px;
+}
+
+.splash-art {
+	margin: auto;
+	display: block;
+	text-align: left;
+	width: 90%;
+}
+
+.container {
+	position: relative;
+}
+
+.works {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	height: 175px;
+	width: 175px;
+	border: 1px dotted gray;
+	border-radius: 5;
+	margin: 10px;
+	background-image: url({{ MEDIA_URL }}{{ artwork.image }});
+	background-position: center;
+	background-size: 350px;
+	cursor: pointer;
+}
+
+.recent {
+	display: inline-block;
+	overflow: hidden;
+	width: 90%;
+	border: dotted 1px gray;
+	padding: 20px;
+
+}
+
+.thumbContainer {
+	display: inline-block;
+}
+
+
+.navbar-brand {
+	font-size: 200%;
+}
+
+.navbar-brand:link, .navbar-brand:visited, .navbar-brand:active {
+	color: #23afbc;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: red;
+    background-color: transparent;
+}
+
+.year {
+	color: gray;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+body > nav > div {
+	background-color:#e8e8e8;
+}
+
+
+.modal-body {
+	overflow: hidden;
+	padding: 10px;
+	border: none;
+	text-align: center;
+}
+
+.image {
+	width: 85%;
+}
+
+.modal-header {
+	background-color: white;
+	border: none;
+}
+
+.modal-title {
+	font-style: italic;
+}
+
+.splash-title {
+	font-size: 200%;
+	color: #23afbc;
+	text-align: left;
+}
+
+.modal-footer {
+	border: none;
+	text-align: left;
+	padding-top: 40px;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.modalimage {
+	width: 85%;
+}
+
+.navbar-nav>li>a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.collapse li{
+  display: inline-block;
+  vertical-align: middle;
+  line-height:50px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+}
+
+.nav>li>a>i {
+	position: relative;
+    display: inline-block;
+    line-height: 50px;
+    padding-bottom: 0;
+    color: #23afbc;
+}
+
+.nav>li>a>i:hover {
+    color: red;
+}
+
+.navbar-default {
+    border-color: transparent;
+}
+
+@media (max-width: 900px) {
+    .navbar-header {
+        float: none;
+    }
+
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

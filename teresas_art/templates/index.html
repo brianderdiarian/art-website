@@ -1,0 +1,38 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="eng">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compativle" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Teresa Derdiarian</title>
+
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		{% load static %}
+		
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<body style="padding-top: 70px; background-color: black;">
+		
+		<style>
+		@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700';
+		</style>
+
+	</head>
+	<body id="splash-page">
+		{% for artwork in artworks %}
+			<div class="container">
+				<div class="row">
+        			<div class="col-md-3"></div>
+        			<div class="col-md-6">
+        				<h1 class="splash-title">Teresa Derdiarian</h1>
+						<a href="recent/"><img class="splash-art" src="media/{{ artwork.image }}" width="500"></a>
+        			</div>
+        			<div class="col-md-3"></div>
+      			</div>
+			</div>
+		{% endfor %}
+	</body>
+</html>

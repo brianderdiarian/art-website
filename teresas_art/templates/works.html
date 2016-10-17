@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      
+      <div class="year">
+      <p>2016</p>
+    	{% for artwork in artworks_2016 %}
+              <div class="thumbContainer">
+              <div class="thumbnail works"
+                title ="<q>{{ artwork.name }}</q>"
+                medium="{{ artwork.medium }}"
+                year="{{ artwork.year }}"
+                size="{{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}"
+                href="#"
+                image="<img class='modalimage' src='{{ MEDIA_URL }}{{ artwork.image }}'>"
+                style="background-image: url({{ MEDIA_URL }}{{ artwork.image }}); background-position: center; background-size: 400px;">
+              </a>
+              </div>
+            </div>
+    	{% endfor %}
+      </div>
+      
+      <div class="year">
+      <p>2015</p>
+    	{% for artwork in artworks_2015 %}
+              <div class="thumbContainer">
+              <div class="thumbnail works"
+                title ="<q>{{ artwork.name }}</q>"
+                medium="{{ artwork.medium }}"
+                year="{{ artwork.year }}"
+                size="{{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}"
+                href="#"
+                image="<img class='modalimage' src='{{ MEDIA_URL }}{{ artwork.image }}'>"
+                style="background-image: url({{ MEDIA_URL }}{{ artwork.image }}); background-position: center; background-size: 400px;">
+              </a>
+              </div>
+            </div>
+    	{% endfor %}
+      </div>
+      
+      <div class="year">
+        <p>2014</p>
+        {% for artwork in artworks_2014 %}
+              <div class="thumbContainer">
+              <div class="thumbnail works"
+                title ="<q>{{ artwork.name }}</q>"
+                medium="{{ artwork.medium }}"
+                year="{{ artwork.year }}"
+                size="{{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}"
+                href="#"
+                image="<img class='modalimage' src='{{ MEDIA_URL }}{{ artwork.image }}'>"
+                style="background-image: url({{ MEDIA_URL }}{{ artwork.image }}); background-position: center; background-size: 400px;">
+              </a>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+      <div class="year">
+        <p>Earlier</p>
+        {% for artwork in earlier %}
+              <div class="thumbContainer">
+              <div class="thumbnail works"
+                title ="<q>{{ artwork.name }}</q>"
+                medium="{{ artwork.medium }}"
+                year="{{ artwork.year }}"
+                size="{{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}"
+                href="#"
+                image="<img class='modalimage' src='{{ MEDIA_URL }}{{ artwork.image }}'>"
+                style="background-image: url({{ MEDIA_URL }}{{ artwork.image }}); background-position: center; background-size: 400px;">
+              </a>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+
+<div tabindex="-1" class="modal" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">×</button>
+
+  </div>
+  <div class="modal-body">
+    <div class="modal-image"></div>
+  </div>
+  <div class="modal-footer">
+    <h4 class="modal-title"></h4>
+    <h5 class="modal-medium"></h5>
+    <h5 class="modal-size"></h5>
+    <h5 class="modal-year"></h5>
+
+  </div>
+   </div>
+  </div>
+</div>
+{% endblock content %}

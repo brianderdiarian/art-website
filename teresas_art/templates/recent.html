@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div>
+    <div class="container">
+    <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+	{% for artwork in artworks %}
+
+    		        <div class="thumbnail recent">
+      			      <img src="{{ MEDIA_URL }}{{ artwork.image }}" width="100%%">
+      			      <div class="caption">
+        			      <h4 style="font-style:italic">"{{ artwork.name }}"</h4>
+        			      <p>{{ artwork.year }}<br>
+        			      {{ artwork.medium }}<br>
+        			      {{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}</p>
+        			      <p style="text-align:left; font-weight:bold">{{ artwork.comments }}</p>
+                  </div>
+                </div>
+             
+	{% endfor %}
+</div>
+   <div class"col-md-3"></div>
+             
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
