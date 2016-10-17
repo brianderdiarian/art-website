@@ -1,0 +1,1 @@
+web: gunicorn teresa_art.wsgi --log-file -
