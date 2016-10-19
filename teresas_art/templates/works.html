@@ -2,6 +2,25 @@
 
 
 {% block content %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('.thumbnail').click(function(){
+          var title = $(this).attr("title");
+          var medium = $(this).attr("medium");
+          var size = $(this).attr("size");
+          var year = $(this).attr("year");
+          var image = $(this).attr("image")
+          $('.modal-title').html(title);
+          $('.modal-medium').html(medium);
+          $('.modal-size').html(size);
+          $('.modal-year').html(year);
+          $('.modal-image').html(image);
+          $($(this).html()).appendTo('.modal-body');
+          $('#myModal').modal({show:true});
+      });
+      });
+    </script>
+    
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-1"></div>

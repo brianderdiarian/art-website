@@ -2,6 +2,24 @@
 
 
 {% block content %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('.thumbnail').click(function(){
+          var title = $(this).attr("title");
+          var medium = $(this).attr("medium");
+          var size = $(this).attr("size");
+          var year = $(this).attr("year");
+          var image = $(this).attr("image")
+          $('.modal-title').html(title);
+          $('.modal-medium').html(medium);
+          $('.modal-size').html(size);
+          $('.modal-year').html(year);
+          $('.modal-image').html(image);
+          $('#myModal').modal({show:true});
+      });
+      });
+    </script>
+
 <div>
     <div class="container">
     <div class="row">
@@ -9,14 +27,17 @@
               <div class="col-md-6">
 	{% for artwork in artworks %}
 
-    		        <div class="thumbnail recent">
+    		        <div class="thumbnail recent"
+                  title ="<q>{{ artwork.name }}</q>"
+                  medium="{{ artwork.medium }}"
+                  year="{{ artwork.year }}"
+                  size="{{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}"
+                  href="#"
+                  image = "<img class='modalimage' src='{{ MEDIA_URL }}{{ artwork.image }}'>">
       			      <img src="{{ MEDIA_URL }}{{ artwork.image }}" width="100%%">
       			      <div class="caption">
         			      <h4 style="font-style:italic">"{{ artwork.name }}"</h4>
-        			      <p>{{ artwork.year }}<br>
-        			      {{ artwork.medium }}<br>
-        			      {{ artwork.width }}&nbsp;x&nbsp;{{ artwork.height }}</p>
-        			      <p style="text-align:left; font-weight:bold">{{ artwork.comments }}</p>
+        			      <p style="text-align:left;">{{ artwork.comments }}</p>
                   </div>
                 </div>
              
@@ -25,6 +46,27 @@
    <div class"col-md-3"></div>
              
     </div>
+  </div>
+</div>
+
+<div tabindex="-1" class="modal" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">×</button>
+
+  </div>
+  <div class="modal-body">
+    <div class="modal-image"></div>
+  </div>
+  <div class="modal-footer">
+    <h4 class="modal-title"></h4>
+    <h5 class="modal-medium"></h5>
+    <h5 class="modal-size"></h5>
+    <h5 class="modal-year"></h5>
+
+  </div>
+   </div>
   </div>
 </div>
 
