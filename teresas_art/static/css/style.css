@@ -39,6 +39,7 @@ body {
 	width: 90%;
 	border: dotted 1px gray;
 	padding: 20px;
+	cursor: pointer;
 
 }
 
